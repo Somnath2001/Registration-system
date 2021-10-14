@@ -1,6 +1,6 @@
 # Registration-system
 
-# Frontend = responsive, UI
+# Frontend = responsive, UI, Bootstrap
 
 # Database = Mysql
 
