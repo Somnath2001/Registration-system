@@ -1,0 +1,83 @@
+<html lang="en">
+  <head>
+      {{>header}}
+    <title>User</title>
+  </head>
+  <body>
+   {{>navbar}}
+   {{#if message}}
+     <div class="error-div"> <h4 class="error">{{message}}</h4></div>
+    {{/if}}
+    <div class="card offset-md-2 col-md-12" style="max-width: 60%">
+  <div class="row ">
+    <div class="col-md-4 ">
+     <img alt="User Pic" src="http://localhost:{{env}}/uploaded-images/{{data.file}}" class="img-fluid rounded-start" />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">User Profile</h5>
+        <p class="card-text"><span>Firstname :</span>{{data.firstname}}</p>
+        <p class="card-text"><span>Lastname:</span>{{data.lastname}}</p>
+        <p class="card-text"><span>Contact :</span>{{data.contact}}</p>
+        <p class="card-text"><span>Email :</span>{{data.email}}</p>
+        <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false" aria-controls="collapseExample">
+          update Profile
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update your Profile Here</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/profile/update/{{data.id}}" method="POST" enctype="multipart/form-data" >
+            <div class="mb-3">
+            <label for="Profile_Pic" class="col-form-label">Profile Pic</label>
+            <input
+              type="file"
+              name="updatedimage"
+              id="file"
+              class="input-file"
+              value={{data.file}}
+            />
+            </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">FirstName</label>
+            <input type="text" class="form-control" name="firstname" value={{data.firstname}}>
+          </div>
+           <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">LastName</label>
+            <input type="text" class="form-control" name="lastname" value={{data.lastname}}>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Email</label>
+            <input type="text" class="form-control" name="email" value={{data.email}}>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">contact</label>
+            <input type="text" class="form-control" name="contact" value={{data.contact}}>
+
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">password</label>
+            <input type="text" class="form-control" name="password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit"  name="" class="btn btn-primary">update</button>
+      </form>
+      </div>
+     </div>
+    </div>
+   </div> 
+ </div>
+</div>
+</div>
+</div>
+
+   
+   {{>footer}}
+  </body>
+</html>

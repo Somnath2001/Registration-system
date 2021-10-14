@@ -1,0 +1,15 @@
+<html lang="en">
+  <head>
+    <title>Home</title>
+    {{>header}}
+  </head>
+  <body>
+    {{>navbar}}
+     {{#if message}}
+     <div class="error-div"> <h4 class="error">{{message}}</h4></div>
+    {{/if}} 
+    <div class="heading"><h1>Registration <span>PORTAL</span></h1></div>
+    <div class="mainbg"><img src="/img/main.jpeg" alt="backimg" class="img-fluid "/></div>
+    {{>footer}}
+  </body>
+</html>

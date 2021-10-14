@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <title>Register</title>
+</head>
+<body class="form-v7">
+    {{>navbar}}
+    {{#if message}}
+     <div class="error-div"> <h4 class="error">{{message}}</h4></div>
+    {{/if}}  
+ <div class="page-content">
+      <div class="form-v7-content form-v7-content-layout">
+        <div class="form-left">
+          <img src="img/helpimg.svg"  class="img-fluid img2" alt="form" />
+          <p class="text-1">Register</p>
+          <p class="text-2 text-2-layout">Privacy policy & Term of service</p>
+        </div>
+        <form class="form-detail" action="/register" method="POST" enctype="multipart/form-data" >
+        <div class="form-row">
+            <label for="Profile_Pic">Profile</label>
+            <input
+              type="file"
+              name="image"
+              id="file"
+              class="input-file"
+            />
+          </div>
+          <div class="form-row">
+            <label for="firstname"> FIRSTNAME</label>
+            <input
+              type="text"
+              name="firstname"
+              id="lastname"
+              class="input-text"
+            />
+          </div>
+          <div class="form-row">
+            <label for="lastname"> LASTNAME</label>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              class="input-text"
+            />
+          </div>
+          <div class="form-row">
+            <label for="your_email">E-MAIL</label>
+            <input
+              type="text"
+              name="email"
+              id="your_email"
+              class="input-text"
+              required
+              pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
+            />
+          </div>
+          <div class="form-row">
+            <label for="contact">CONTACT</label>
+            <input
+              type="number"
+              name="contact"
+              id="contact"
+              class="input-number"
+            />
+          </div>
+          <div class="form-row">
+            <label for="password">PASSWORD</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="input-text"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label for="comfirm_password">CONFIRM PASSWORD</label>
+            <input
+              type="password"
+              name="comfirm_password"
+              id="comfirm_password"
+              class="input-text"
+              required
+            />
+          </div>
+           
+          <div class="form-row-last">
+            <input
+              type="submit"
+              class="register"
+              value="Sign up"
+            />
+            <p>Or<a href="/signin">Sign in</a></p>
+          </div>
+        </form>
+      </div>
+    </div>   
+    
+  {{>footer}}
+</body>
+</html>

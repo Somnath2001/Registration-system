@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <title>Loginr</title>
+</head>
+<body class="form-v7">
+    {{>navbar}}
+    {{#if message}}
+     <div class="error-div"> <h4 class="error">{{message}}</h4></div>
+    {{/if}}  
+ <div class="page-content">
+      <div class="form-v7-content">
+        <div class="form-left">
+          <img src="img/helpimg.svg"  class="img-fluid" alt="form" />
+          <p class="text-1">Sign In</p>
+          <p class="text-2 text-2-layout">Privacy policy & Term of service</p>
+        </div>
+        <form class="form-detail form-detail-layout" action="/login" method="POST" >
+          <div class="form-row">
+            <label for="your_email">E-MAIL</label>
+            <input
+              type="text"
+              name="email"
+              id="your_email"
+              class="input-text"
+              required
+              pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
+            />
+          </div>
+          
+          <div class="form-row">
+            <label for="password">PASSWORD</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="input-text"
+              required
+            />
+          </div>
+          <div class="form-row-last p-3">
+            <input
+              type="submit"
+              class="register"
+              value="Signin"
+            />
+            <p>Or<a href="/signup">Signup</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+      
+    {{>footer}}
+</body>
+</html>

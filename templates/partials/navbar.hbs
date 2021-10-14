@@ -1,0 +1,31 @@
+<!-- Nav Bar Start -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand brand">Re<span
+        class="text-info"
+      >gis</span>ter</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav ms-auto">
+        {{#if notice}}
+          <a href="/logout" class="nav-item nav-link text-danger">Logout</a>
+        {{else}}
+          <a href="/" class="nav-item nav-link active">Home</a>
+          <a href="/login" class="nav-item nav-link">Login</a>
+          <a href="/register" class="nav-item nav-link">Register</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Nav Bar End -->
