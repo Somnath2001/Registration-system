@@ -5,7 +5,7 @@ const multer = require("multer");
 const fs = require("fs");
 const dotenv = require("dotenv");
 dotenv.config();
-port = process.env.PORT || 8081;
+port = process.env.PORT || 8086;
 
 //storage for profiepic
 const storage = multer.diskStorage({
