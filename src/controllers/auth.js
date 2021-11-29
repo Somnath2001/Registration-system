@@ -106,6 +106,8 @@ exports.register = (req, res) => {
 //login for user
 exports.login = (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
+
   var sql = `SELECT * FROM users WHERE email = ?;`;
   db.query(sql, [email], (error, results) => {
     if (error) {
